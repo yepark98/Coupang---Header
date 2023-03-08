@@ -1,1 +1,349 @@
 /* 헤더 */
+
+/* 로그인 바 */
+.loginBar {
+  background-color: var(--color-gray-100);
+}
+
+.loginBar__list {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px 4px;
+  width: 1020px;
+  height: 24px;
+  list-style: none;
+}
+
+.loginBar__item:nth-child(n + 4) {
+  order: -1;
+}
+
+.loginBar__item:first-child {
+  margin-left: auto;
+}
+
+.loginBar__link {
+  display: block;
+  padding: 5px 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* 헤더 Inner */
+.header__inner {
+  display: grid;
+  /* 5개 구성 : 카테고리 버튼, 로고, 검색폼, 장바구니, 마이쿠팡 */
+  grid-template-columns: auto 246px 538px auto auto;
+  grid-template-rows: 74px 42px;
+  grid-template-areas: "buttonCategory brand searchForm myCoupang cart" "buttonCategory typeNavigation typeNavigation myCoupang cart";
+  margin: 0 auto;
+  width: 1020px;
+}
+
+/* 로고 */
+.brand {
+  grid-area: brand;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 40px 0 30px;
+  align-self: end;
+}
+
+.brand__link {
+  display: block;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logo--ir {
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: contain;
+}
+
+.logo--colorful {
+  background-image: url(../../assets/logo/logo.svg);
+}
+
+/* 카테고리 버튼 */
+.button--category {
+  grid-area: buttonCategory;
+  padding-top: 42px;
+  width: 110px;
+  height: 116px;
+  border: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--color-white);
+  background: var(--color-blue-600) url(../../assets/icon/hamburger.svg)
+    no-repeat 50% 30px;
+}
+
+/* 검색 폼 */
+.searchForm {
+  grid-area: searchForm;
+  align-self: end;
+}
+
+.searchForm fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.searchForm__wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 40px;
+  border: 2px solid var(--color-blue-600);
+}
+
+.formSelect {
+  position: relative;
+  height: 100%;
+  border-right: 1px solid var(--color-gray-100);
+}
+
+.iconDown {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.formSelect__select {
+  /* 드롭다운 삭제 */
+  appearance: none;
+  margin: 0;
+  padding-left: 12px;
+  width: 135px;
+  height: 100%;
+  border: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--color-gray-700);
+}
+
+.formInput {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.formInput__input {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 13px;
+}
+
+.formInput__input::placeholder {
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--color-gray-700);
+}
+
+.button--search,
+.button--voiceSearch {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  padding: 0;
+  border: 0;
+}
+
+.button--search {
+  order: 1;
+  background: url(../../assets/icon/search.svg) no-repeat 50% 50%;
+}
+
+.button--voiceSearch {
+  background: url(../../assets/icon/mic.svg) no-repeat 50% 50%;
+}
+
+/* 마이쿠팡 */
+.myCoupang {
+  grid-area: myCoupang;
+  position: relative;
+  margin-left: 22px;
+  font-size: 12px;
+  line-height: 1.2;
+  align-self: center;
+}
+
+.button {
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+.button--myCoupang {
+  width: 50px;
+  height: 60px;
+  background: transparent url(../../assets/icon/my-coupang.svg) no-repeat 50%
+    5px;
+  padding: 30px 0 0 0;
+}
+
+.myCoupang__list {
+  position: absolute;
+  display: none;
+  flex-flow: column nowrap;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  left: 50%;
+  background-color: var(--color-white);
+  transform: translateX(-50%);
+  border: 1px solid var(--color-gray-300);
+  padding: 20px 16px;
+}
+
+.is--active .myCoupang__list {
+  display: flex;
+}
+
+.myCoupang__list::before,
+.myCoupang__list::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.myCoupang__list::before {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid var(--color-gray-300);
+  top: -8px;
+}
+
+.myCoupang__list::after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 8px solid var(--color-white);
+  top: -7px;
+}
+
+.myCoupang__item {
+  margin: 0.2rem 0;
+}
+
+.myCoupang__link {
+  display: block;
+  padding: 4px;
+  white-space: nowrap;
+}
+
+/* 장바구니 */
+.cart {
+  grid-area: cart;
+  align-self: center;
+  font-size: 12px;
+  line-height: 1.2;
+  margin-left: 6px;
+  position: relative;
+}
+
+.cart__buttonWrapper {
+  position: relative;
+}
+
+.button--cart {
+  width: 50px;
+  height: 60px;
+  padding: 30px 0 0;
+  background: url(../../assets/icon/cart.svg) no-repeat 50% 5px;
+}
+
+.cartProductCount {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-blue-600);
+}
+
+.cart__detail {
+  position: absolute;
+  display: none;
+  right: 0;
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+}
+
+.cart__detail::before,
+.cart__detail::after {
+  content: "";
+  position: absolute;
+  left: 87%;
+  transform: translateX(-50%);
+}
+
+.cart__detail::before {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid var(--color-gray-300);
+  top: -8px;
+}
+
+.cart__detail::after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 8px solid var(--color-white);
+  top: -7px;
+}
+
+.cart__empty {
+  white-space: nowrap;
+  padding: 36px 46px;
+}
+
+.cart--empty .cart__detail {
+  display: block;
+}
+
+/* 유형별 링크 목록 */
+.typeNavigation {
+  grid-area: typeNavigation;
+  align-self: center;
+}
+
+.typeNavigation__list {
+  list-style: none;
+  margin-left: 36px;
+  padding-left: 0;
+  font-size: 0;
+}
+
+.typeNavigation__item {
+  display: inline-block;
+}
+
+.typeNavigation__link {
+  display: block;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.badge--rocket {
+  margin-right: 4px;
+}
+
+.badge--new {
+  margin-left: 4px;
+}

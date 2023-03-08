@@ -41,7 +41,7 @@
       <!-- 검색 폼 -->
       <form action="/" class="searchForm" method="GET">
         <fieldset>
-          <legend>검색 폼</legend>
+          <legend class="sr-only">검색 폼</legend>
           <div class="searchForm__wrapper">
             <div class="formSelect">
               <select name="searchCategory" id="searchCategory" class="formSelect__select" aria-label="검색 카테고리 선택">
@@ -79,7 +79,7 @@
       <!-- 장바구니 -->
       <div class="cart">
         <div class="cart__buttonWrapper">
-          <button type="button" class="button--cart">장바구니</button>
+          <button type="button" class="button button--cart">장바구니</button>
           <span class="sr-only">상품 개수</span>
           <strong class="cartProductCount">0</strong>
         </div>
@@ -91,13 +91,16 @@
       <div class="typeNavigation">
         <ul class="typeNavigation__list">
           <li class="typeNavigation__item">
-            <a href="/" class="typeNavigation__link"><img src="./assets/icon/icon-rocket.svg" alt="">로켓배송</a>
+            <a href="/" class="typeNavigation__link"><img src="./assets/icon/icon-rocket.svg" alt=""
+                class="badge--rocket">로켓배송</a>
           </li>
           <li class="typeNavigation__item">
-            <a href="/" class="typeNavigation__link"><img src="./assets/icon/icon-fresh.svg" alt="">로켓프레시</a>
+            <a href="/" class="typeNavigation__link"><img src="./assets/icon/icon-fresh.svg" alt=""
+                class="badge--rocket">로켓프레시</a>
           </li>
           <li class="typeNavigation__item">
-            <a href="/" class="typeNavigation__link">2022년 설날<img src="./assets/icon/new.svg" alt="New"></a>
+            <a href="/" class="typeNavigation__link">2022년 설날<img src="./assets/icon/new.svg" alt="New"
+                class="badge--new"></a>
           </li>
           <li class="typeNavigation__item">
             <a href="/" class="typeNavigation__link">로켓직구</a>
